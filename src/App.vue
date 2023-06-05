@@ -27,6 +27,14 @@ export default {
 <style>
 body {
   margin: 0;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+body,
+html {
+  height: 100%;
 }
 
 #app {
@@ -37,6 +45,8 @@ body {
   color: #2c3e50;
   margin-top: 0;
   /*margin-top: 60px;*/
+
+  height: 100%;
 }
 
 .navigation,
@@ -61,7 +71,11 @@ body {
 }
 
 .main-content {
-  min-height: 100vp - 220px;
+  /* make content fix 100% of free space */
+  overflow: auto;
+  min-height: 79%;
+  height: 100%;
+  height: auto;
 }
 
 .footer {
