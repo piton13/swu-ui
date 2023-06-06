@@ -1,9 +1,10 @@
 <template>
   <div class="event">
     <div class="event_picture">
-<!--      <img :alt="pictureAlt" src="../assets/herb_velykyi.avif" class="event_picture_img">-->
-      <img :alt="pictureAlt" :src="image" class="event_picture_img">
+      <img :alt="pictureAlt" src="../assets/Tryzub.png" class="event_picture_img">
+<!--      <img :alt="pictureAlt" :src="image" class="event_picture_img">-->
 <!--      <img :alt="pictureAlt" :src="picturePath" class="event_picture_img">-->
+<!--      <img :alt="pictureAlt" :src="pictureLink" class="event_picture_img">-->
     </div>
     <div class="event_description">{{ description }}</div>
   </div>
@@ -46,8 +47,8 @@ export default {
 
 }
 .event_picture {
-  height: 540px;
-  width: 540px;
+  height: 320px;
+  width: 320px;
 }
 .event_picture_img {
   width: 100%;

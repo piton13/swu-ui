@@ -1,19 +1,19 @@
 <template>
   <div class="home">
-    <div class="event">
+<!--    <div class="event">
       <div class="event_picture">
         <img alt="Event 1 picture" src="../assets/herb_velykyi.avif" class="event_picture_img">
       </div>
       <div class="event_description">Description Event 1</div>
-    </div>
-<!--    <div v-for="(event, ind) in events" :key="ind">
+    </div>-->
+    <div v-for="(event, ind) in events" :key="ind">
       <EventComponent
           :description="event.description"
-          :pictureAlt="event.pictureAlt"
-          :pictureLink="event.picturePath"
+          :picture-alt="event.pictureAlt"
+          :picture-link="event.picturePath"
       />
-    </div>-->
-<!--    <EventComponent description="Description Event 2" picture-alt="Event 2 picture" picture-link="herb_velykyi.avif"/>-->
+    </div>
+<!--    <EventComponent description="Description Event 2" picture-alt="Event 2 picture" picture-link="../assets/Tryzub.png"/>-->
 <!--    <div>
       <div>
         <img alt="Event 2 picture" src="../assets/Tryzub.png" class="event_picture_img">
@@ -30,22 +30,29 @@
 </template>
 
 <script>
-// import EventComponent from './Event';
+import EventComponent from './Event';
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'Home',
   components: {
-    // EventComponent,
+    EventComponent,
   },
   data: () => ({
     // height: 640,
     // width: 640,
     events: [{
+      description: 'Description Event 1',
+      pictureAlt: 'Event 1 picture',
+      picturePath: require("../assets/herb_velykyi.avif"),
+    }, {
       description: 'Description Event 2',
       pictureAlt: 'Event 2 picture',
+      picturePath: require("../assets/Tryzub.png"),
+    }, {
+      description: 'Description Event 3',
+      pictureAlt: 'Event 3 picture',
       picturePath: require("../assets/Kalyna.jpg"),
-      // picturePath: '../assets/herb_velykyi.avif'
     }],
   }),
   props: {
