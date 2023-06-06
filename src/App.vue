@@ -1,9 +1,9 @@
 <template>
   <nav class="navigation">
-    <router-link to="/">Home</router-link>
-    <router-link to="/about">About</router-link>
-    <router-link to="/contacts">Contacts</router-link>
-    <router-link to="/hello-world">HW</router-link>
+    <router-link to="/" class="navigation_home">SWUG+Logo</router-link>
+    <router-link to="/about" class="navigation_about">About</router-link>
+    <router-link to="/contacts" class="navigation_contacts">Contacts</router-link>
+<!--    <router-link to="/hello-world">HW</router-link>-->
   </nav>
 <!--  <HelloWorld msg="Welcome to Your Vue.js App"/>-->
   <router-view class="main-content"></router-view>
@@ -64,10 +64,35 @@ html {
   /* sticky navigation */
   position: fixed;
   top: 0;
-  width: 100%
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  /*align-items: baseline;*/
+  align-items: center;
 }
 .navigation+.main-content {
   padding-top: 110px; /* sticky navigation: 70px - height of navigation + paddings 2*20 */
+}
+
+.navigation_home,
+.navigation_about,
+.navigation_contacts {
+
+}
+
+.navigation_home {
+  flex-grow: 10;
+}
+
+.navigation_about {
+  flex-grow: 2;
+}
+
+.navigation_contacts {
+  flex-grow: 2;
 }
 
 .main-content {

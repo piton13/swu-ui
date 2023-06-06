@@ -1,24 +1,52 @@
 <template>
   <div class="home">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad hic officia repellat soluta ullam voluptas voluptates. Magni, tempore, ut! Alias aliquam, atque consequatur debitis dignissimos, distinctio error esse expedita maiores mollitia natus praesentium, similique! Aspernatur deserunt dolore eius nostrum vel! Ad commodi consequatur dolore eligendi illum nobis quos vel. Ab architecto explicabo praesentium rem sit sunt voluptas! Accusamus architecto debitis distinctio dolor facilis hic iste laudantium magni molestias perspiciatis rem repellat suscipit, vel? Ad asperiores consectetur delectus eligendi excepturi facere illo inventore ipsam ipsum laboriosam laborum maiores, maxime minima modi nam natus nostrum officia optio praesentium ratione sed soluta ullam ut velit voluptate! Ad, adipisci autem consectetur et facilis inventore itaque labore laudantium optio quas ratione repudiandae sunt unde. Consectetur, eaque, pariatur. At, molestias sint! Aliquid aperiam atque culpa deleniti earum eos error fugiat harum illo, nihil, non numquam omnis pariatur possimus suscipit? Adipisci eaque facilis id impedit quas ratione.</p>
-    <p>Some image put here</p>
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad hic officia repellat soluta ullam voluptas voluptates. Magni, tempore, ut! Alias aliquam, atque consequatur debitis dignissimos, distinctio error esse expedita maiores mollitia natus praesentium, similique! Aspernatur deserunt dolore eius nostrum vel! Ad commodi consequatur dolore eligendi illum nobis quos vel. Ab architecto explicabo praesentium rem sit sunt voluptas! Accusamus architecto debitis distinctio dolor facilis hic iste laudantium magni molestias perspiciatis rem repellat suscipit, vel? Ad asperiores consectetur delectus eligendi excepturi facere illo inventore ipsam ipsum laboriosam laborum maiores, maxime minima modi nam natus nostrum officia optio praesentium ratione sed soluta ullam ut velit voluptate! Ad, adipisci autem consectetur et facilis inventore itaque labore laudantium optio quas ratione repudiandae sunt unde. Consectetur, eaque, pariatur. At, molestias sint! Aliquid aperiam atque culpa deleniti earum eos error fugiat harum illo, nihil, non numquam omnis pariatur possimus suscipit? Adipisci eaque facilis id impedit quas ratione.</p>
-    <p>Some image put here</p>
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad hic officia repellat soluta ullam voluptas voluptates. Magni, tempore, ut! Alias aliquam, atque consequatur debitis dignissimos, distinctio error esse expedita maiores mollitia natus praesentium, similique! Aspernatur deserunt dolore eius nostrum vel! Ad commodi consequatur dolore eligendi illum nobis quos vel. Ab architecto explicabo praesentium rem sit sunt voluptas! Accusamus architecto debitis distinctio dolor facilis hic iste laudantium magni molestias perspiciatis rem repellat suscipit, vel? Ad asperiores consectetur delectus eligendi excepturi facere illo inventore ipsam ipsum laboriosam laborum maiores, maxime minima modi nam natus nostrum officia optio praesentium ratione sed soluta ullam ut velit voluptate! Ad, adipisci autem consectetur et facilis inventore itaque labore laudantium optio quas ratione repudiandae sunt unde. Consectetur, eaque, pariatur. At, molestias sint! Aliquid aperiam atque culpa deleniti earum eos error fugiat harum illo, nihil, non numquam omnis pariatur possimus suscipit? Adipisci eaque facilis id impedit quas ratione.</p>
-    <p>Some image put here</p>
-    <p>
-      <img alt="Vue logo" src="../assets/logo.png">
-    </p>
+    <div class="event">
+      <div class="event_picture">
+        <img alt="Event 1 picture" src="../assets/herb_velykyi.avif" class="event_picture_img">
+      </div>
+      <div class="event_description">Description Event 1</div>
+    </div>
+<!--    <div v-for="(event, ind) in events" :key="ind">
+      <EventComponent
+          :description="event.description"
+          :pictureAlt="event.pictureAlt"
+          :pictureLink="event.picturePath"
+      />
+    </div>-->
+<!--    <EventComponent description="Description Event 2" picture-alt="Event 2 picture" picture-link="herb_velykyi.avif"/>-->
+<!--    <div>
+      <div>
+        <img alt="Event 2 picture" src="../assets/Tryzub.png" class="event_picture_img">
+      </div>
+      <div>Description Event 2</div>
+    </div>
+    <div>
+      <div>
+        <img alt="Event 3 picture" src="../assets/Kalyna.jpg" class="event_picture_img">
+      </div>
+      <div>Description Event 3</div>
+    </div>-->
   </div>
 </template>
 
 <script>
+// import EventComponent from './Event';
+
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'Home',
+  components: {
+    // EventComponent,
+  },
   data: () => ({
+    // height: 640,
+    // width: 640,
+    events: [{
+      description: 'Description Event 2',
+      pictureAlt: 'Event 2 picture',
+      picturePath: require("../assets/Kalyna.jpg"),
+      // picturePath: '../assets/herb_velykyi.avif'
+    }],
   }),
   props: {
     msg: String
@@ -28,18 +56,22 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.event {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  /*align-items: baseline;*/
+  align-items: center;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+.event_picture,
+.event_description {}
+.event_picture {
+  height: 540px;
+  width: 540px;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.event_picture_img {
+  width: 100%;
+  height: 100%;
 }
 </style>
